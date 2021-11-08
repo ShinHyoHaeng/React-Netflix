@@ -1,7 +1,9 @@
 import {useRef, useState} from "react";
+import { Link } from 'react-router-dom';
 import './register.scss';
 
-export default function Register() {
+export default function Register({history}) {
+
     // 이메일 기입 여부 확인
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
@@ -13,17 +15,18 @@ export default function Register() {
     const handleStart = () => {
         setEmail(emailRef.current.value);
     };
-
     const handleFinish = () => {
         setPassword(passwordRef.current.value);
-        this.props.history.push("../home/Home");
+        history.push("/React-Netflix/list")
     };
     return (
         <div className="register">
             <div className="top">
                 <div className="wrapper">
-                    <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="logo" />
-                    <button className="loginButton">Sign In</button>
+                    <Link to="/React-Netflix">
+                        <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="logo" />
+                    </Link>
+                    <Link to="/React-Netflix/Login"><button className="loginButton">Sign In</button></Link>
                 </div>
             </div>
             <div className="container">

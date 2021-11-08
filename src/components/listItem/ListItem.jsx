@@ -2,6 +2,7 @@ import { Add, PlayArrow, ThumbDownOutlined, ThumbUpAltOutlined } from '@material
 import './listItem.scss'
 import {useState} from "react"
 import YoutubeEmbed from '../../YoutubeEmbed'
+import { Link } from 'react-router-dom';
 
 export default function ListItem({index}) {
 
@@ -18,9 +19,9 @@ export default function ListItem({index}) {
         >
             <img src="https://material.asset.catchplay.com/WAR-TW-002-A0073/artworks/posters/WAR-TW-002-A0073-P704.jpg" alt="harry potter and the chamber of secrets" />
             {isHovered && (
-                <>
+                <Link to="/React-Netflix/watch">
                     {/* 삽입한 동영상 자동재생+반복 설정 */}
-                    <YoutubeEmbed embedId="1bq0qff4iF8" className="videoThumb"/>
+                    <YoutubeEmbed embedId="1bq0qff4iF8"/>        
                     <div className="itemInfo">
                         <div className="icons">
                             <PlayArrow className="icon"/>
@@ -36,7 +37,7 @@ export default function ListItem({index}) {
                         <div className="desc">An ancient prophecy seems to be coming true when a mysterious presence begins stalking the corridors of a school of magic and leaving its victims paralyzed.</div>
                         <div className="genre">Adventure, Family, Fantasy</div>
                     </div>
-                </>
+                </Link>
             )}
         </div>
     )

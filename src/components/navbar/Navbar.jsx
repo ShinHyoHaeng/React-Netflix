@@ -1,6 +1,7 @@
 import './navbar.scss'
 import { ArrowDropDown, Notifications, Search } from '@material-ui/icons'
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 
  const Navbar = () => {
     // 스크롤을 내리면 배경색이 들어가고 다시 스크롤이 최상단으로 올라가면 배경색이 투명하게 바뀌도록 하는 함수
@@ -17,8 +18,9 @@ import { useState } from 'react'
         <div className={isScrolled ? "navbar scrolled":"navbar"}> 
             <div className="container">
                 <div className="left">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="logo" />
-                    
+                    <Link to="/React-Netflix/list">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="logo" />
+                    </Link>
                     {/* 추후에 페이지를 만든 후 수정할 예정 */}
                     <span>Homepage</span>
                     <span>Series</span>

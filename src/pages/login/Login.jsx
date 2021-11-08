@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './login.scss';
 
 export default function Login() {
@@ -5,7 +6,9 @@ export default function Login() {
         <div className="login">
             <div className="top">
                 <div className="wrapper">
-                    <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="logo" />
+                    <Link to="/React-Netflix">
+                        <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="logo" />
+                    </Link>
                 </div>
             </div>
             <div className="container">

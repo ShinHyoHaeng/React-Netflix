@@ -11,7 +11,7 @@
         height: 100%;
         object-fit: cover;
     }
-    .videoThumb{
+    .video{
         width:100%;
         height:140px;
         object-fit: cover;
@@ -20,6 +20,10 @@
         left: 0;
     }
     &:hover{
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
         width: 325px;
         height: 300px;
         position: absolute;
