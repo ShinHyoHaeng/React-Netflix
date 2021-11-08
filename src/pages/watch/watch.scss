@@ -1,3 +1,5 @@
+@import '../../mixin'; // responsive web
+
 .watch{
     width:100vw;
     height:100vh;
@@ -22,3 +24,29 @@
     }
 
 }
+
+
+// responsive web
+@mixin mobile {
+    .watch{
+        .back{
+            padding: 1em 1.5em;
+            a{
+                text-decoration: none;
+                font-weight: 500;
+                font-size: #{$font-default};
+            }
+        }
+    }
+    
+}
+
+@mixin tablet {
+   
+}
+
+@mixin desktop {
+  
+}
+
+

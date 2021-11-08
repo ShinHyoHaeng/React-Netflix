@@ -17,7 +17,7 @@ export default function Register({history}) {
     };
     const handleFinish = () => {
         setPassword(passwordRef.current.value);
-        history.push("/React-Netflix/list")
+        history.push("/React-Netflix/home")
     };
     return (
         <div className="register">

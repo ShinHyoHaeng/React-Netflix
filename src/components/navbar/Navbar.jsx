@@ -16,7 +16,7 @@ import { BrowserView, MobileView } from 'react-device-detect';
     // 모바일 네비게이션 바 동작 관련 함수
     const [clicked, setClicked] = useState(false);
 
-    //false = bars, true = times
+    //false = 메뉴 바, true = 닫기 버튼
     const handleClick = () => {
         setClicked(!clicked);
     }

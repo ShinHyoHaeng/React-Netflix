@@ -128,7 +128,7 @@
 }
 
 @include tablet {
-    .register{
+    .login{
         .container{
             h1{
                 font-size: #{$font-xlarge};

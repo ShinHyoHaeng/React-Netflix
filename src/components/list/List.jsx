@@ -2,7 +2,7 @@ import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icon
 import './list.scss'
 import { useRef, useState } from 'react'
 import ListItem from '../listItem/ListItem'
-
+ 
 export default function List() {
     
     const [isMoved, setIsMoved] = useState(false);
@@ -54,5 +54,6 @@ export default function List() {
                 <ArrowForwardIosOutlined className="sliderArrow right" onClick={() => handleClick("right")}/>
             </div>
         </div>
+
     )
 }

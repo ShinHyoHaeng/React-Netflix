@@ -8,7 +8,7 @@ export default function Watch() {
     return (
         <div className="watch">
             <div className="back">
-                <Link to="/React-Netflix/list">
+                <Link to="/React-Netflix/home">
                     <ArrowBackOutlined/> 
                     Home
                 </Link>
