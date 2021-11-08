@@ -1,3 +1,5 @@
+@import '../../mixin'; // responsive web
+
 .featured{
     height: 90vh;
     position:relative;
@@ -68,4 +70,55 @@
             }
         }
     }
+}
+
+@include mobile {
+    .featured{
+        height:75vh;
+        .info{
+            width:100%;
+            position:absolute;
+            left: 0;
+            bottom: 3em;
+            align-items: center;
+            img{
+                width: 200px;
+                height: auto;
+                margin:0 auto 1.5em auto;
+            }
+            .desc{
+                display: none;
+            }
+            .buttons{
+                button{
+                    padding:0.5em 1em;
+                    margin-right: 1em;
+                }
+                button:last-child{
+                    margin-right: 0;
+                }
+                
+            }
+        }
+    }
+}
+
+@include tablet {
+    .featured{
+        height:auto;
+        .info{
+            width: 50%;
+            img{
+                width:300px;
+                margin-bottom: 1em;
+            }
+            .desc{
+                display: none;
+            }
+        }
+    }
+}
+
+@include desktop {
+  
 }

@@ -1,0 +1,28 @@
+@import './variables';
+
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+
+// mobile/tablet font size
+$font-xlarge: 3rem;
+$font-large: 1.5rem;
+$font-medium: 1.125rem;
+$font-default: 1rem;
+$font-small: 0.75rem;

@@ -1,3 +1,5 @@
+@import '../../mixin'; // responsive web
+
 .register{
     width: 100vw;
     height: 100vh;
@@ -17,13 +19,16 @@
                 cursor: pointer;
             }
             .loginButton{
-                background-color: red;
+                background-color: var(--red);
                 border: none;
                 color: #fff;
                 border-radius: 5px;
                 padding: 5px 15px;
                 font-size: 16px;
                 cursor: pointer;
+                &:hover{
+                    background-color: var(--btn-hover);
+                }
             }
         }
     }
@@ -65,12 +70,95 @@
             .registerButton{
                 flex: 3;
                 height: 100%;
-                background-color: red;
+                background-color: var(--red);
                 border: none;
                 color: #fff;
                 font-size: 22px;
                 cursor: pointer;
+                &:hover{
+                        background-color: var(--btn-hover);
+                }
+                &:active{
+                    background-color: var(--btn-hover);
+                }    
             }
         }
     }
+}
+
+@include mobile {
+    .register{
+        .top{
+            .wrapper{
+                padding: 1em 1.5em;
+                .logo{
+                    height: 1.5em;
+                }
+                .loginButton{
+                    font-size: #{$font-default};
+                }
+            }
+        }
+        .container{
+            text-align: center;
+            padding:0 1.5em;
+            width: 100%;
+            box-sizing: border-box;
+            h1{
+                font-size: #{$font-large};
+            }
+            h2{
+                font-size: #{$font-medium};
+                margin:1.5em 0;
+            }
+            p{
+                font-size: #{$font-default};
+            }
+            .input{
+                width: 100%;
+                text-align:left;
+                margin-top: 1.5em;
+                flex-direction: column;
+                border-radius: 0;
+                background-color: transparent;
+                height: auto;
+                input{
+                    width: 100%;
+                    flex: none;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    height: auto;
+                    padding: 1em; 
+                    font-size: #{$font-default};
+                }
+                .registerButton{
+                    flex: none;
+                    margin-top: 1em;
+                    font-size: #{$font-default};
+                    padding: 1em;
+                    height: auto;
+                    border-radius: 5px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .register{
+        .container{
+            h1{
+                font-size: #{$font-xlarge};
+                text-align: center;
+            }
+            .input{
+                width: 80%;
+            }
+        }
+    }
+}
+
+@include desktop {
+  
 }

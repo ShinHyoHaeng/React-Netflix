@@ -1,3 +1,5 @@
+@import '../../mixin'; 
+
 .list{
     width: 100%;
     margin-top: 10px;
@@ -35,4 +37,29 @@
             transition: all 1s ease;
         }
     }
+}
+
+
+@include mobile {
+    .list{
+        margin: 1.5em 0;
+        .listTitle{
+            margin-left: 1.5em;
+            font-size: #{$font-medium};
+        }
+    }
+}
+
+@include tablet {
+    .list{
+        margin: 1.5em 0;
+        .listTitle{
+            margin-left: 1.5em;
+            font-size: #{$font-medium};
+        }
+    }
+}
+
+@include desktop {
+  
 }
