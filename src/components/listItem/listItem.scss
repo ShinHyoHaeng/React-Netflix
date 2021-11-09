@@ -23,7 +23,7 @@
     }
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine){
 	.listItem{
         &:hover{
             a{
