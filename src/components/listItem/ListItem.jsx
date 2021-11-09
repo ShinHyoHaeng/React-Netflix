@@ -1,7 +1,7 @@
 import { Add, PlayArrow, ThumbDownOutlined, ThumbUpAltOutlined } from '@material-ui/icons'
 import './listItem.scss'
 import {useState} from "react"
-import ListItemMob from './LisItemMob';
+import Modal from '../../pages/modal/Modal'
 import YoutubeEmbed from '../../YoutubeEmbed';
 import { Link } from 'react-router-dom';
 import { BrowserView, MobileView } from 'react-device-detect';
@@ -10,13 +10,14 @@ export default function ListItem({index}) {
 
     // 이미지 마우스 오버 이벤트 발생 시 이미지 크기가 커짐 -> 이미지 위치값+여백값 계산 필요
     const [isHovered, setIsHovered] = useState(false) //PC용
-    const [isShowing, setIsShowing] = useState(false); //mobile용
-    const openModal=()=>{
-        setIsShowing(true); 
+    
+    // mobile/tablet에서는 modal 활용
+    const [modalOpen, setModalOpen] = useState(false)
+    const modalClose = () => {
+        setModalOpen(!modalOpen)
     }
 
     // 마우스 오버 시 트레일러 영상 출력(유튜브 영상)
-    // const trailer = "https://youtu.be/1bq0qff4iF8"
     return (
         <>
             <BrowserView>
@@ -49,10 +50,10 @@ export default function ListItem({index}) {
                 </div>
             </BrowserView>
             <MobileView>
-                <div className="listItem" onClick={openModal}>
+                <div className="listItem" onClick={modalClose}>
                     <img src="https://material.asset.catchplay.com/WAR-TW-002-A0073/artworks/posters/WAR-TW-002-A0073-P704.jpg" alt="harry potter and the chamber of secrets" />
                 </div>       
-                <>{isShowing && <ListItemMob/>}</>
+                <>{modalOpen && <Modal modalClose={modalClose}></Modal>}</>
             </MobileView>
         </>
     )
