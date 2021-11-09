@@ -81,7 +81,7 @@
     }   
 }
 
-@media (any-hover:hover) and (any-pointer: coarse) {
+@media (pointer: coarse) {
     .listItem{
         &:hover{
             height: 120px;
