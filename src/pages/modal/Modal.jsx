@@ -23,7 +23,7 @@ const Modal = ({modalClose}) => {
                 <YoutubeEmbed embedId="1bq0qff4iF8"/>      
                 <div className="itemInfo">
                     <div className="icons">
-                        <Link to="/React-Netflix/watch" className="playBtn">
+                        <Link to="/React-Netflix/watch" className="playBtn" onClick={modalClose}>
                             <button><PlayArrow/></button>
                         </Link>  
                         <Add className="icon"/>
