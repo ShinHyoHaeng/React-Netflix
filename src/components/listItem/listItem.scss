@@ -21,7 +21,10 @@
         top: 0;
         left: 0;
     }
-    &:hover{
+}
+
+@media (hover: hover) {
+	.listItem{
         a{
             color: #fff;
             text-decoration: none;
@@ -77,12 +80,7 @@
 }
 
 @include mobile {
-    .listItem{
-        &:hover{
-            display:none;
-        }
-    }
-    
+
     .itemModal{
         display: block;
         position:fixed;
@@ -166,13 +164,7 @@
 
 }
 
-@include tablet {
-        .listItem{
-        &:hover{
-            display:none;
-        }
-    }
-    
+@include tablet {    
     .itemModal{
         display: block;
         position:fixed;
