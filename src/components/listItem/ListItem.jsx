@@ -2,12 +2,7 @@ import './listItem.scss'
 import {useState} from "react"
 import Modal from '../../pages/modal/Modal'
 
-export default function ListItem({index}) {
-
-    // 이미지 마우스 오버 이벤트 발생 시 이미지 크기가 커짐 -> 이미지 위치값+여백값 계산 필요
-    // hover 이벤트 -> 클릭 이벤트로 수정?
-    const [isHovered, setIsHovered] = useState(false) //PC용
-    
+export default function ListItem({index}) {    
     // mobile/tablet에서는 modal 활용
     const [modalOpen, setModalOpen] = useState(false)
     const modalClose = () => {
