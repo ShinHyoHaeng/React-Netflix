@@ -15,10 +15,22 @@ export default function Register({history}) {
     const handleStart = () => {
         setEmail(emailRef.current.value);
     };
+    // handleStart 키보드 이벤트
+    const onKeyPressStart = (e) => {
+        if(e.key == 'Enter'){
+            handleStart();
+        }
+    };
     const handleFinish = () => {
         setPassword(passwordRef.current.value);
         history.push("/React-Netflix/home")
     };
+    // handleFinish 키보드 이벤트
+    const onKeyPressFinish = (e) => {
+        if(e.key == 'Enter'){
+            handleFinish();
+        }
+    }
     return (
         <div className="register">
             <div className="top">
@@ -36,12 +48,12 @@ export default function Register({history}) {
                 {
                     !email ? ( // 이메일이 없을 때
                         <div className="input">
-                            <input type="email" placeholder="email address" ref={emailRef}/>
+                            <input type="email" placeholder="email address" ref={emailRef} onKeyPress={onKeyPressStart} autoFocus/>
                             <button className="registerButton" onClick={handleStart}>Get Started</button>
                         </div>
                     ) : ( // 이메일이 있을 때
                         <form className="input">
-                            <input type="password" placeholder="password" ref={passwordRef}/>
+                            <input type="password" placeholder="password" ref={passwordRef} onKeyPress={onKeyPressFinish} autoFocus/>
                             <button className="registerButton" onClick={handleFinish}>Start</button>
                         </form>
                     )
