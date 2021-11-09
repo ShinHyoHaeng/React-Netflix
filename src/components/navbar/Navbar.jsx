@@ -19,6 +19,11 @@ import { BrowserView, MobileView } from 'react-device-detect';
     //false = 메뉴 바, true = 닫기 버튼
     const handleClick = () => {
         setClicked(!clicked);
+        if(clicked){
+            document.body.style.overflow = "unset";
+        }else{
+            document.body.style.overflow = "hidden";
+        }
     }
 
     return (
