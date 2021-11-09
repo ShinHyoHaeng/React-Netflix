@@ -86,7 +86,15 @@
 }
 
 @include tablet {    
-    
+    .listItem{
+        &:hover{
+            height: 120px;
+            img{ // hover 시 이미지 크기 변경
+                height: 120px;
+            }
+        }
+        
+    }
 }
 
 @include desktop {
