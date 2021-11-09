@@ -81,11 +81,7 @@
     }   
 }
 
-@include mobile {
-
-}
-
-@include tablet {    
+@media (hover: none) and (pointer: fine) {
     .listItem{
         &:hover{
             height: 120px;
@@ -95,6 +91,14 @@
         }
         
     }
+}
+
+@include mobile {
+
+}
+
+@include tablet {    
+    
 }
 
 @include desktop {
