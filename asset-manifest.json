@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/React-Netflix/static/css/main.965c13da.chunk.css",
+    "main.css": "/React-Netflix/static/css/main.a824f337.chunk.css",
     "main.js": "/React-Netflix/static/js/main.c81971be.chunk.js",
     "main.js.map": "/React-Netflix/static/js/main.c81971be.chunk.js.map",
     "runtime-main.js": "/React-Netflix/static/js/runtime-main.7d86483d.js",
@@ -8,13 +8,13 @@
     "static/js/2.b8557ab4.chunk.js": "/React-Netflix/static/js/2.b8557ab4.chunk.js",
     "static/js/2.b8557ab4.chunk.js.map": "/React-Netflix/static/js/2.b8557ab4.chunk.js.map",
     "index.html": "/React-Netflix/index.html",
-    "static/css/main.965c13da.chunk.css.map": "/React-Netflix/static/css/main.965c13da.chunk.css.map",
+    "static/css/main.a824f337.chunk.css.map": "/React-Netflix/static/css/main.a824f337.chunk.css.map",
     "static/js/2.b8557ab4.chunk.js.LICENSE.txt": "/React-Netflix/static/js/2.b8557ab4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7d86483d.js",
     "static/js/2.b8557ab4.chunk.js",
-    "static/css/main.965c13da.chunk.css",
+    "static/css/main.a824f337.chunk.css",
     "static/js/main.c81971be.chunk.js"
   ]
 }
