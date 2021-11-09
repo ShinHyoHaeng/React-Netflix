@@ -81,15 +81,28 @@
     }   
 }
 
-@media (pointer: coarse) {
+@media (hover:hover) and (any-pointer: coarse) {
     .listItem{
-        &:hover{
-            height: 120px;
-            img{ // hover 시 이미지 크기 변경
-                height: 120px;
-            }
+        width: 225px;
+        height: 120px;
+        background-color: var(--main-color);
+        margin-right: 5px;
+        overflow:hidden;
+        cursor:pointer;
+        color: #fff;
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
         }
-        
+        .video{
+            width:100%;
+            height:140px;
+            object-fit: cover;
+            position:absolute;
+            top: 0;
+            left: 0;
+        }
     }
 }
 
