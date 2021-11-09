@@ -24,7 +24,19 @@
 }
 
 @media (hover: hover){
-	.listItem{
+	
+}
+
+@include mobile {
+
+}
+
+@include tablet {    
+    
+}
+
+@include desktop {
+  .listItem{
         &:hover{
             a{
             color: #fff;
@@ -79,16 +91,4 @@
             }
         }
     }   
-}
-
-@include mobile {
-
-}
-
-@include tablet {    
-    
-}
-
-@include desktop {
-  
 }
