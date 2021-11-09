@@ -156,10 +156,11 @@
                 border-radius: 5px;
                 display: flex;
                 align-items: center;
-            }
-            &:active{
+                &:active{
                 background-color: var(--btn-hover);
+                }
             }
+            
         }
     }
 
