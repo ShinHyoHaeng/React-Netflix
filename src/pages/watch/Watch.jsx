@@ -13,7 +13,7 @@ export default function Watch() {
                     Home
                 </Link>
             </div>
-            <YoutubeEmbed embedId="1bq0qff4iF8" className="video"/>
+            <YoutubeEmbed embedId="0Dj2kq5Neus" className="video"/>
         </div>
     )
 }

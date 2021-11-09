@@ -14,7 +14,13 @@
 }
 
 @mixin desktop {
-  @media (min-width: #{$breakpoint-desktop}) {
+  @media (min-width: #{$breakpoint-desktop}) and (max-width: #{$breakpoint-xldesktop - 1px}){
+    @content;
+  }
+}
+
+@mixin xldesktop {
+  @media (min-width: #{$breakpoint-xldesktop}) {
     @content;
   }
 }

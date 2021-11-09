@@ -17,7 +17,7 @@ export default function Register({history}) {
     };
     // handleStart 키보드 이벤트
     const onKeyPressStart = (e) => {
-        if(e.key == 'Enter'){
+        if(e.key === 'Enter'){
             handleStart();
         }
     };
@@ -27,7 +27,7 @@ export default function Register({history}) {
     };
     // handleFinish 키보드 이벤트
     const onKeyPressFinish = (e) => {
-        if(e.key == 'Enter'){
+        if(e.key === 'Enter'){
             handleFinish();
         }
     }
