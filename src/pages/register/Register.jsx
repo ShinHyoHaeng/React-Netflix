@@ -52,10 +52,10 @@ export default function Register({history}) {
                             <button className="registerButton" onClick={handleStart}>Get Started</button>
                         </div>
                     ) : ( // 이메일이 있을 때
-                        <form className="input">
+                        <div className="input">
                             <input type="password" placeholder="password" ref={passwordRef} onKeyPress={onKeyPressFinish} autoFocus/>
                             <button className="registerButton" onClick={handleFinish}>Start</button>
-                        </form>
+                        </div>
                     )
                 }
             </div>
