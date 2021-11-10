@@ -31,7 +31,7 @@ export default function Featured({type}) {
             
             {/* 텍스트 영역 */}
             <div className="info">
-                <img src="https://www.jing.fm/clipimg/full/112-1128075_harry-potter-and-the-sorcerers-stone-logo-harry.png" alt="Harry Potter And The Sorcerer's Stone" />
+                <h1><img src="https://www.jing.fm/clipimg/full/112-1128075_harry-potter-and-the-sorcerers-stone-logo-harry.png" alt="Harry Potter And The Sorcerer's Stone" /></h1>
                 <span className="desc">An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.</span>
                 <div className="buttons">
                     <button className="play">
