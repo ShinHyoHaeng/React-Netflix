@@ -1,5 +1,5 @@
-import { Add, PlayArrow, ThumbDownOutlined, ThumbUpAltOutlined, ArrowBackOutlined, Close } from '@material-ui/icons'
-import YoutubeEmbed from '../../YoutubeEmbed'
+import { Add, PlayArrow, ThumbDownOutlined, ThumbUpAltOutlined, Close } from '@material-ui/icons'
+import YoutubeEmbed from '../YoutubeEmbed'
 import { Link } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import './modal.scss'

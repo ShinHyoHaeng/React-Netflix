@@ -1,7 +1,7 @@
 @import '../../mixin'; // responsive web
 
 .featured{
-    height: 90vh;
+    height: 75vh;
     position:relative;
     .category{
         position:absolute;
@@ -27,7 +27,7 @@
         object-fit: cover;
     }
     .info{
-        width: 35%;
+        width: 45%;
         position: absolute;
         left: 50px;
         bottom: 100px;
@@ -39,8 +39,11 @@
             // svg 이미지 색상 변환
             filter: invert(98%) sepia(98%) saturate(0%) hue-rotate(342deg) brightness(101%) contrast(105%);
         }
+        h1{
+            font-size: 45px;
+        }
         .desc{
-            margin:20px 0px;
+            margin:30px 0px;
             font-size: 16px;
         }
         .buttons{
@@ -86,6 +89,12 @@
                 height: auto;
                 margin:0 auto 1.5em auto;
             }
+            h1{
+                font-size: 2em;
+                margin-bottom: 1em;
+                padding:0 1.5em;
+                text-align: center;
+            }
             .desc{
                 display: none;
             }
@@ -93,6 +102,7 @@
                 button{
                     padding:0.5em 1em;
                     margin-right: 1em;
+                    font-size: #{$font-default};
                 }
                 button:last-child{
                     margin-right: 0;

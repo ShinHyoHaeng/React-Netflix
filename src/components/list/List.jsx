@@ -1,10 +1,11 @@
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icons'
 import './list.scss'
-import { useRef, useState } from 'react'
+import React,{useRef,useEffect, useState} from 'react';
+import {API_URL, API_KEY, IMAGE_BASE_URL } from '../../database/Movie'
 import ListItem from '../listItem/ListItem'
+import { withRouter } from 'react-router';
  
-export default function List() {
-    
+function List(props) {
     const [isMoved, setIsMoved] = useState(false);
     
     // slider 번호 
@@ -29,25 +30,37 @@ export default function List() {
         }
     }
 
+    
+    const [Movies, setMovies] = useState([]);
+
+    useEffect(() => {
+        const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+        fetch(endpoint)
+        .then((response) => (response.json()))
+        .then((response) => {
+            console.log(response.results);
+            setMovies([...response.results]);
+        });
+    }, []);
+
     return (
         <div className="list">
-            <span className="listTitle">Continue to watch</span>
+            <span className="listTitle">{props.title}</span>
             <div className="wrapper">
                 {/* slider 버튼(prev) */}
                 <ArrowBackIosOutlined className="sliderArrow left" onClick={() => handleClick("left")} style={{display: !isMoved && "none"}} />
 
                 {/* slider 이미지 영역 */}
                 <div className="container" ref={listRef}>
-                    <ListItem index={0} />
-                    <ListItem index={1} />
-                    <ListItem index={2} />
-                    <ListItem index={3} />
-                    <ListItem index={4} />
-                    <ListItem index={5} />
-                    <ListItem index={6} />
-                    <ListItem index={7} />
-                    <ListItem index={8} />
-                    <ListItem index={9} />
+                    {Movies.map((movie, index) => (
+                            <ListItem 
+                                key={index}
+                                image={movie.poster_path ? `${IMAGE_BASE_URL}w500/${movie.poster_path}`:null}
+                                movieId={movie.id}
+                                title={movie.original_title}
+                            />
+                        ))
+                    }
                 </div>
 
                 {/* slider 버튼(next) */}
@@ -57,3 +70,5 @@ export default function List() {
 
     )
 }
+
+export default withRouter(List)

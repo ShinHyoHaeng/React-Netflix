@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowBackOutlined } from '@material-ui/icons'
 import './watch.scss'
-import YoutubeEmbed from '../../YoutubeEmbed'
+import YoutubeEmbed from '../../components/YoutubeEmbed'
 import { Link } from 'react-router-dom';
 
 export default function Watch() {

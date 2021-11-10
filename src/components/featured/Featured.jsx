@@ -1,10 +1,25 @@
-import { InfoOutlined, PlayArrow } from '@material-ui/icons'
+import React,{useEffect, useState} from 'react';
+import { withRouter } from 'react-router';
+import {API_URL, API_KEY, IMAGE_BASE_URL } from '../../database/Movie'
+import FeaturedImg from './FeaturedImg'
 import './featured.scss'
 
-export default function Featured({type}) {
+function Featured(props) {
+    const [Movies, setMovies] = useState([]);
+    const [MainMovieImg, setMainMovieImg] = useState(null);
+
+    useEffect(() => {
+        const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+        fetch(endpoint)
+        .then((response) => (response.json()))
+        .then((response) => {
+            setMovies([response.results]);
+            setMainMovieImg(MainMovieImg || response.results[0]);
+        });
+    }, []);
     return (
         <div className="featured">
-            {type && (
+            {/* {type && (
                 <div className="category">
                     <span>{type === "movie" ? "Movies" : "Series"}</span>
                     <select name="genre" id="genre">
@@ -24,26 +39,18 @@ export default function Featured({type}) {
                         <option value="documentary">Documentary</option>
                     </select>
                 </div>
-            )}
+            )} */}
 
-            {/* 배경 이미지(dummy image) */}
-            <img src="https://images.ctfassets.net/usf1vwtuqyxm/4ZvGyBKC4ACJjntjPa9GPC/b874be064afe0a773cb2d8a8e16bf9a6/HP-F1-philosophers-stone-harry-shows-scar-on-hogwarts-express-web-landscape.jpg?fm=jpg&q=70&w=2560" alt="" />
-            
-            {/* 텍스트 영역 */}
-            <div className="info">
-                <h1><img src="https://www.jing.fm/clipimg/full/112-1128075_harry-potter-and-the-sorcerers-stone-logo-harry.png" alt="Harry Potter And The Sorcerer's Stone" /></h1>
-                <span className="desc">An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.</span>
-                <div className="buttons">
-                    <button className="play">
-                        <PlayArrow/>
-                        <span>Play</span>
-                    </button>
-                    <button className="more">
-                        <InfoOutlined/>
-                        <span>Info</span>
-                    </button>
-                </div>
-            </div>
+            {MainMovieImg && (
+                <FeaturedImg  
+                image={`${IMAGE_BASE_URL}w1280/${MainMovieImg.backdrop_path}`}
+                title={MainMovieImg.original_title}
+                desc={MainMovieImg.overview}
+                movieId={MainMovieImg.id}
+                />
+            )}
         </div>
     )
 }
+
+export default withRouter(Featured);
