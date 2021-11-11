@@ -32,7 +32,6 @@ export class ImgSlider extends Component {
             infinite: false,
             slidesToShow: 6,
             slidesToScroll: 1,
-            swipe: false,
             initialSlide:0,
             lazyLoad: true,
             nextArrow: <SampleNextArrow />,
@@ -59,8 +58,9 @@ export class ImgSlider extends Component {
                 {
                     breakpoint: 758,
                     settings: {
+                        unslick: true,
                         slidesToShow: 2,
-                        swipe: true,
+                        initialSlide:1,
                         arrows: false
                     }
                 }
