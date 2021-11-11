@@ -62,7 +62,8 @@ export class ImgSlider extends Component {
                         slidesToShow: 2,
                         initialSlide:1,
                         slidesToScroll: 2,
-                        swipe:true
+                        swipe:true,
+                        Arrows:false
                     }
                 }
             ]
