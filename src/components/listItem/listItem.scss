@@ -1,34 +1,30 @@
 @import '../../mixin'; // responsive web
 
 .listItem{
-    width: 225px;
-    height: 305px;
-    margin-right: 5px;
-    overflow:hidden;
+    width: 95%;
+    height: auto;
+    margin: 0 2.5%;
     cursor:pointer;
     color: #fff;
     position:relative;
-    // .dimmed{
-    //     position:absolute;
-    //     left: 0;
-    //     right: 0;
-    //     bottom:0;
-    //     top: 0;
-    //     background: linear-gradient(to top, rgb(0,0,0,0.3) 100%, transparent 0%);
-    // }
-    
     img{
         width:100%;
         height: 100%;
         object-fit: cover;
     }
-    .video{
-        width:100%;
-        height:140px;
-        object-fit: cover;
+    .ranking{
         position:absolute;
-        top: 0;
+        top:0;
         left: 0;
+        background-color: var(--red);
+        color: #fff;
+        font-weight: 900;
+        font-size: #{$font-default};
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 

@@ -1,35 +1,73 @@
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icons'
 import './list.scss'
-import React,{useRef,useEffect, useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import {API_URL, API_KEY, IMAGE_BASE_URL } from '../../database/Movie'
 import ListItem from '../listItem/ListItem'
 import { withRouter } from 'react-router';
- 
+
+import Slider from "react-slick"
+import "./slick.css"; 
+import "./slick-theme.css";
+
+function SampleNextArrow(props) {
+  const { className, onClick } = props;
+  return (
+    <div className={className} onClick={onClick}>
+        <ArrowForwardIosOutlined className="SlickArrow"/>
+    </div>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, onClick } = props;
+  return (
+    <div className={className} onClick={onClick}>
+        <ArrowBackIosOutlined className="SlickArrow"/>
+    </div>
+  );
+}
+
 function List(props) {
-    const [isMoved, setIsMoved] = useState(false);
-    
-    // slider 번호 
-    const [slideNumber, setSlideNumber] = useState(0);
-
-    // slider 버튼 이벤트 함수
-    const listRef = useRef();
-
-    const handleClick = (direction) => {
-
-        setIsMoved(true)
-
-        let distance = listRef.current.getBoundingClientRect().x - 50;
-
-        if(direction === "left" && slideNumber > 0){
-            setSlideNumber(slideNumber-1);
-            listRef.current.style.transform = `translateX(${230+distance}px)`
-        }
-        if(direction === "right" && slideNumber < 5){
-            setSlideNumber(slideNumber+1);
-            listRef.current.style.transform = `translateX(${-230+distance}px)`
-        }
+    const settings = {
+        infinite: false,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        swipe: false,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 5
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 940,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     }
-
     
     const [Movies, setMovies] = useState([]);
 
@@ -46,26 +84,17 @@ function List(props) {
     return (
         <div className="list">
             <span className="listTitle">{props.title}</span>
-            <div className="wrapper">
-                {/* slider 버튼(prev) */}
-                <ArrowBackIosOutlined className="sliderArrow left" onClick={() => handleClick("left")} style={{display: !isMoved && "none"}} />
-
-                {/* slider 이미지 영역 */}
-                <div className="container" ref={listRef}>
-                    {Movies.map((movie, index) => (
-                            <ListItem 
-                                key={index}
-                                image={movie.poster_path ? `${IMAGE_BASE_URL}w500/${movie.poster_path}`:null}
-                                movieId={movie.id}
-                                title={movie.original_title}
-                            />
-                        ))
-                    }
-                </div>
-
-                {/* slider 버튼(next) */}
-                <ArrowForwardIosOutlined className="sliderArrow right" onClick={() => handleClick("right")}/>
-            </div>
+            <Slider {...settings}>
+                {Movies.map((movie, index) => (
+                    <ListItem 
+                        key={movie.id}
+                        idx={index}
+                        image={movie.poster_path ? `${IMAGE_BASE_URL}w500/${movie.poster_path}`:null}
+                        movieId={movie.id}
+                        title={movie.original_title}
+                    />
+                ))}
+            </Slider>
         </div>
 
     )

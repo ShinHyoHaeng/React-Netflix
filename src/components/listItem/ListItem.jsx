@@ -19,10 +19,8 @@ export default function ListItem(props) {
     return (
         <>
             <div className="listItem" onClick={modalClose}>
+                <span className="ranking">{props.idx+1}</span>
                 <img src={props.image} alt={props.title} />
-                {/* <div className="dimmed">
-                    <p>{props.title}</p>
-                </div> */}
             </div>       
             <>{modalOpen && <Modal modalClose={modalClose}></Modal>}</>
         </>

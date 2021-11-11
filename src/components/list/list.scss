@@ -2,12 +2,15 @@
 
 .list{
     width: 100%;
+    padding: 1em 1.5em;
+    box-sizing: border-box;
     margin: 30px 0;
     .listTitle{
+        display: inline-block;
         color: #fff;
         font-size: 20px;
         font-weight: 500;
-        margin-left: 50px;
+        margin-bottom: 1em;
     }
     .wrapper{
         position: relative;
@@ -36,6 +39,10 @@
             transform: translateX(0px);
             transition: all 1s ease;
         }
+    }
+    .SlickArrow{
+        width: 1.5em;
+        height: 1.5em;
     }
 }
 
