@@ -31,11 +31,23 @@
 
 
 @include mobile {
-
+    .listItem{
+        .ranking{
+            font-size: 1.5rem;
+            width: 2.5em;
+            height: 2.5em;
+        }
+    }
 }
 
 @include tablet {    
-    
+    .listItem{
+        .ranking{
+            font-size: #{$font-medium};
+            width: 45px;
+            height:45px;
+        }
+    }
 }
 
 @include desktop {    

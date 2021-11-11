@@ -8,66 +8,10 @@ import { withRouter } from 'react-router';
 import Slider from "react-slick"
 import "./slick.css"; 
 import "./slick-theme.css";
+import ImgSlider from './ImgSlider';
 
-function SampleNextArrow(props) {
-  const { className, onClick } = props;
-  return (
-    <div className={className} onClick={onClick}>
-        <ArrowForwardIosOutlined className="SlickArrow"/>
-    </div>
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { className, onClick } = props;
-  return (
-    <div className={className} onClick={onClick}>
-        <ArrowBackIosOutlined className="SlickArrow"/>
-    </div>
-  );
-}
 
 function List(props) {
-    const settings = {
-        infinite: false,
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        swipe: false,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
-        responsive: [
-            {
-                breakpoint: 1400,
-                settings: {
-                    slidesToShow: 5
-                }
-            },
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 4
-                }
-            },
-            {
-                breakpoint: 940,
-                settings: {
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 720,
-                settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
-    }
     
     const [Movies, setMovies] = useState([]);
 
@@ -84,7 +28,7 @@ function List(props) {
     return (
         <div className="list">
             <span className="listTitle">{props.title}</span>
-            <Slider {...settings}>
+            <ImgSlider>
                 {Movies.map((movie, index) => (
                     <ListItem 
                         key={movie.id}
@@ -94,7 +38,7 @@ function List(props) {
                         title={movie.original_title}
                     />
                 ))}
-            </Slider>
+            </ImgSlider>
         </div>
 
     )
