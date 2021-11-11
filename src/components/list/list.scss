@@ -60,6 +60,9 @@
                 margin-top: 0;
             }
         }
+        .slick-list{
+            overflow: unset;
+        }
     }
 }
 
@@ -76,6 +79,9 @@
             .container{
                 margin-top: 0;
             }
+        }
+        .slick-list{
+            overflow: unset;
         }
     }
 }

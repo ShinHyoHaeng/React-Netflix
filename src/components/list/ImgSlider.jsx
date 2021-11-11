@@ -29,6 +29,7 @@ export class ImgSlider extends Component {
     render() {
         const {children} = this.props;
         const settings = {
+            slide:'div',
             infinite: false,
             slidesToShow: 6,
             slidesToScroll: 1,
@@ -63,7 +64,7 @@ export class ImgSlider extends Component {
                         initialSlide:1,
                         slidesToScroll: 2,
                         swipe:true,
-                        Arrows:false
+                        arrows:false
                     }
                 }
             ]

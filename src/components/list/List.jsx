@@ -19,21 +19,19 @@ function List(props) {
             setMovies([...response.results]);
         });
     }, []);
-
+    const listItems = Movies.map((movie, index) => (
+        <ListItem 
+            key={movie.id}
+            idx={index}
+            image={movie.poster_path ? `${IMAGE_BASE_URL}w500/${movie.poster_path}`:null}
+            movieId={movie.id}
+            title={movie.original_title}
+        />
+    ))
     return (
         <div className="list">
             <span className="listTitle">{props.title}</span>
-            <ImgSlider>
-                {Movies.map((movie, index) => (
-                    <ListItem 
-                        key={movie.id}
-                        idx={index}
-                        image={movie.poster_path ? `${IMAGE_BASE_URL}w500/${movie.poster_path}`:null}
-                        movieId={movie.id}
-                        title={movie.original_title}
-                    />
-                ))}
-            </ImgSlider>
+            <ImgSlider>{listItems}</ImgSlider>
         </div>
     )
 }
