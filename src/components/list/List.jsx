@@ -21,7 +21,7 @@ function List(props) {
     }, []);
     const listItems = Movies.map((movie, index) => (
         <ListItem 
-            key={movie.id}
+            key={index}
             idx={index}
             image={movie.poster_path ? `${IMAGE_BASE_URL}w500/${movie.poster_path}`:null}
             movieId={movie.id}
