@@ -57,13 +57,15 @@ export class ImgSlider extends Component {
                 {
                     breakpoint: 720,
                     settings: {
-                        slidesToShow: 2
+                        slidesToShow: 2,
+                        swipe: true
                     }
                 },
                 {
                     breakpoint: 480,
                     settings: {
-                        slidesToShow: 1
+                        slidesToShow: 1,
+                        swipe: true
                     }
                 }
             ]

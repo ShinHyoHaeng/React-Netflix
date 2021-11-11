@@ -1,13 +1,8 @@
-import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from '@material-ui/icons'
 import './list.scss'
 import React,{useEffect, useState} from 'react';
 import {API_URL, API_KEY, IMAGE_BASE_URL } from '../../database/Movie'
 import ListItem from '../listItem/ListItem'
 import { withRouter } from 'react-router';
-
-import Slider from "react-slick"
-import "./slick.css"; 
-import "./slick-theme.css";
 import ImgSlider from './ImgSlider';
 
 
