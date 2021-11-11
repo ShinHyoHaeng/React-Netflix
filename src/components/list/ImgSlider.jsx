@@ -33,6 +33,7 @@ export class ImgSlider extends Component {
             slidesToShow: 6,
             slidesToScroll: 1,
             swipe: false,
+            initialSlide:0,
             nextArrow: <SampleNextArrow />,
             prevArrow: <SamplePrevArrow />,
             responsive: [
@@ -55,16 +56,9 @@ export class ImgSlider extends Component {
                     }
                 },
                 {
-                    breakpoint: 720,
+                    breakpoint: 758,
                     settings: {
                         slidesToShow: 2,
-                        swipe: true
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
                         swipe: true
                     }
                 }
