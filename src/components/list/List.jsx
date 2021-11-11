@@ -35,7 +35,6 @@ function List(props) {
                 ))}
             </ImgSlider>
         </div>
-
     )
 }
 

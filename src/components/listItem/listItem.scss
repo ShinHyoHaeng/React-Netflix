@@ -32,6 +32,7 @@
 
 @include mobile {
     .listItem{
+        border-radius:10px;
         .ranking{
             font-size: 1.25rem;
             width: 2em;

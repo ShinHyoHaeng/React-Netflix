@@ -34,7 +34,7 @@ export class ImgSlider extends Component {
             slidesToScroll: 1,
             swipe: false,
             initialSlide:0,
-            lazyLoad: true,
+            lazyload: true,
             nextArrow: <SampleNextArrow />,
             prevArrow: <SamplePrevArrow />,
             responsive: [
@@ -59,12 +59,10 @@ export class ImgSlider extends Component {
                 {
                     breakpoint: 758,
                     settings: {
-                        unslick: true,
                         slidesToShow: 2,
                         initialSlide:1,
-                        swipe:true,
-                        swipeToSlide: true,
-                        arrows: false
+                        slidesToScroll: 2,
+                        swipe:true
                     }
                 }
             ]
