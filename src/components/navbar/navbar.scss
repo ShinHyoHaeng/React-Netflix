@@ -50,8 +50,9 @@
                     display: none;
                     background-color: var(--main-color);
                     border-radius: 5px;
-                }
-                span{
+                }a{
+                    text-decoration: none;
+                    color:#fff;
                     padding:10px;
                     cursor: pointer;
                 }
@@ -62,6 +63,7 @@
                         position:absolute;
                     }
                 }
+                
             }
         }        
     }
@@ -134,13 +136,17 @@
                 font-size: #{$font-medium};
                 margin-bottom: 0.5em;
             }
-            span:after{
-                content: '|';
-                padding: 0 0.5em;
-                display:inline-block;
-            }
-            span:last-of-type:after{
-                content:'';
+            a{
+                color: #fff;
+                text-decoration: none;
+                &:after{
+                    content: '|';
+                    padding: 0 0.5em;
+                    display:inline-block;
+                }
+                &:last-of-type:after{
+                    content:'';
+                }
             }
         }
         .menu{

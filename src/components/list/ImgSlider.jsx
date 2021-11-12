@@ -29,7 +29,6 @@ export class ImgSlider extends Component {
     render() {
         const {children} = this.props;
         const settings = {
-            slide:'div',
             infinite: false,
             slidesToShow: 6,
             slidesToScroll: 1,
@@ -42,19 +41,40 @@ export class ImgSlider extends Component {
                 {
                     breakpoint: 1400,
                     settings: {
-                        slidesToShow: 5
+                        slidesToShow: 5,
+                        infinite: false,
+                        slidesToScroll: 1,
+                        swipe: false,
+                        initialSlide:0,
+                        lazyload: true,
+                        nextArrow: <SampleNextArrow />,
+                        prevArrow: <SamplePrevArrow />
                     }
                 },
                 {
                     breakpoint: 1200,
                     settings: {
-                        slidesToShow: 4
+                        slidesToShow: 4,
+                        infinite: false,
+                        slidesToScroll: 1,
+                        swipe: false,
+                        initialSlide:0,
+                        lazyload: true,
+                        nextArrow: <SampleNextArrow />,
+                        prevArrow: <SamplePrevArrow />
                     }
                 },
                 {
                     breakpoint: 940,
                     settings: {
-                        slidesToShow: 3
+                        slidesToShow: 3,
+                        infinite: false,
+                        slidesToScroll: 1,
+                        swipe: false,
+                        initialSlide:0,
+                        lazyload: true,
+                        nextArrow: <SampleNextArrow />,
+                        prevArrow: <SamplePrevArrow />
                     }
                 },
                 {
@@ -64,7 +84,10 @@ export class ImgSlider extends Component {
                         initialSlide:1,
                         slidesToScroll: 2,
                         swipe:true,
-                        arrows:false
+                        arrows:false,
+                        initialSlide:0,
+                        infinite: false,
+                        lazyload: true
                     }
                 }
             ]

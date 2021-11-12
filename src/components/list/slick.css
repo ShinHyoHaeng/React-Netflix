@@ -23,8 +23,8 @@
     position: relative;
     display: block;
     overflow: hidden;
-    width: 94%;
-    margin: 0 3%;
+    width: 96%;
+    margin: 0 0 0 4%;
     padding: 0;
 }
 .slick-list:focus

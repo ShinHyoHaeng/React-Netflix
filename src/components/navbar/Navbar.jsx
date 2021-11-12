@@ -41,7 +41,7 @@ import { BrowserView, MobileView } from 'react-device-detect';
                             <span>Series</span>
                             <span>Movies</span>
                             <span>New and Popular</span>
-                            <span>My List</span>
+                            {/* <span>My List</span> */}
                         </div>
                         <div className="right">
                             <Search className="icon"/>
@@ -51,8 +51,8 @@ import { BrowserView, MobileView } from 'react-device-detect';
                             <div className="profile">
                                 <ArrowDropDown className="icon"/>
                                 <div className="options">
-                                    <span>Settings</span>
-                                    <span>Logout</span>
+                                    <Link to="/React-Netflix/register"><span>Register</span></Link>
+                                    <Link to="/React-Netflix/login"><span>Login</span></Link>
                                 </div>
                             </div>
                         </div>
@@ -84,9 +84,9 @@ import { BrowserView, MobileView } from 'react-device-detect';
                         <div className="profile">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="profile" /> 
                             <div className="options">
-                                <p>Username</p>
-                                <span>Settings</span>
-                                <span>Logout</span>
+                                <p>Guest</p>
+                                <Link to="/React-Netflix/register"><span>Register</span></Link>
+                                <Link to="/React-Netflix/login"><span>Login</span></Link>
                             </div>
                         </div>
                         <div className="menu">

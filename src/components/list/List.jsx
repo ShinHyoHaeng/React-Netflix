@@ -19,6 +19,7 @@ function List(props) {
             setMovies([...response.results]);
         });
     }, []);
+    
     const listItems = Movies.map((movie, index) => (
         <ListItem 
             key={index}
