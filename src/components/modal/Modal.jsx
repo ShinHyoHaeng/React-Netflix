@@ -1,18 +1,45 @@
-import { Add, PlayArrow, ThumbDownOutlined, ThumbUpAltOutlined, Close } from '@material-ui/icons'
-import YoutubeEmbed from '../YoutubeEmbed'
-import { Link } from 'react-router-dom';
 import { createPortal } from 'react-dom';
+import { useEffect, useState } from 'react';
+import { Add, PlayArrow, ThumbDownOutlined, ThumbUpAltOutlined, Close, Star } from '@material-ui/icons'
+import {API_URL, API_KEY, IMAGE_BASE_URL } from '../../database/Movie'
+import { Link } from 'react-router-dom';
 import './modal.scss'
 
-const Modal = ({modalClose}) => {
+const Modal = (props) => {
+
+    const [modalOpen, setModalOpen] = useState(false)
+    const modalClose = () => {
+        setModalOpen(!modalOpen)
+        if(modalOpen){
+            document.body.style.overflow = "unset";
+        }else{
+            document.body.style.overflow = "hidden";
+        }
+    }
+
     // modal 외부 영역 클릭 시 modal 닫힘
     const onCloseModal = (e) => {
         console.log('e.target: ', e.target)
-        console.log('e.tarcurrentTargetget: ', e.currentTarget)
+        console.log('e.targetcurrentTarget: ', e.currentTarget)
         if(e.target === e.currentTarget){
             modalClose()
         }
     }
+
+    let movieId = props.movieId;
+    const [Movie, setMovie] = useState([]);
+
+    useEffect(() => {
+        // let endpointCrew = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
+        let endpointInfo = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
+
+        fetch(endpointInfo)
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            setMovie(response);
+        })
+    })
 
     return createPortal(
         <div className="modal_container" onClick={onCloseModal}>
@@ -20,7 +47,15 @@ const Modal = ({modalClose}) => {
                 <div className="back">
                     <Close onClick={modalClose} className="modal_button" />
                 </div>
-                <YoutubeEmbed embedId="1bq0qff4iF8"/>      
+                <div className="itemImg">
+                    {Movie.backdrop_path &&
+                        <img src={`${IMAGE_BASE_URL}w1280/${Movie.backdrop_path}`} alt={Movie.title}/>
+                    }
+                    <div className="itemText">
+                        <h1>{Movie.original_title}</h1>
+                        <p className="desc">{Movie.overview}</p>
+                    </div>
+                </div>
                 <div className="itemInfo">
                     <div className="icons">
                         <Link to="/React-Netflix/watch" className="playBtn" onClick={modalClose}>
@@ -31,17 +66,17 @@ const Modal = ({modalClose}) => {
                         <ThumbDownOutlined className="icon"/>
                     </div>
                     <div className="itemInfoTop">
-                        <span>2 hour 41 mins</span>
-                        <span className="limit">ALL</span>
-                        <span>2002</span>
+                        <span>{Movie.runtime}min.</span>
+                        <span className="limit"><Star className="icon"/> {Movie.vote_average}</span>
+                        <span>{Movie.release_date}</span>
                     </div>
-                    <div className="desc">An ancient prophecy seems to be coming true when a mysterious presence begins stalking the corridors of a school of magic and leaving its victims paralyzed.</div>
-                    <div className="genre">Adventure, Family, Fantasy</div>
+                    <div className="genre">genre</div>
                 </div>
             </div>
         </div>,
         document.getElementById("modal") 
     )
+    
 }
 
 export default Modal

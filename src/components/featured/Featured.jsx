@@ -43,10 +43,10 @@ function Featured(props) {
 
             {MainMovieImg && (
                 <FeaturedImg  
-                image={`${IMAGE_BASE_URL}w1280/${MainMovieImg.backdrop_path}`}
-                title={MainMovieImg.original_title}
-                desc={MainMovieImg.overview}
-                movieId={MainMovieImg.id}
+                    image={`${IMAGE_BASE_URL}w1280/${MainMovieImg.backdrop_path}`}
+                    title={MainMovieImg.original_title}
+                    desc={MainMovieImg.overview}
+                    movieId={MainMovieImg.id}
                 />
             )}
         </div>

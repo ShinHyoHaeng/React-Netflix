@@ -81,7 +81,6 @@ export class ImgSlider extends Component {
                     breakpoint: 758,
                     settings: {
                         slidesToShow: 2,
-                        initialSlide:1,
                         slidesToScroll: 2,
                         swipe:true,
                         arrows:false,

@@ -4,7 +4,6 @@ import Modal from '../modal/Modal'
 
 export default function ListItem(props) {    
 
-    // mobile/tablet에서는 modal 활용
     const [modalOpen, setModalOpen] = useState(false)
     const modalClose = () => {
         setModalOpen(!modalOpen)
@@ -22,7 +21,7 @@ export default function ListItem(props) {
                 <span className="ranking">{props.idx+1}</span>
                 <img src={props.image} alt={props.title} />
             </div>       
-            <>{modalOpen && <Modal modalClose={modalClose}></Modal>}</>
+            <>{modalOpen && <Modal movieId={props.movieId}></Modal>}</>
         </>
     )
 }
