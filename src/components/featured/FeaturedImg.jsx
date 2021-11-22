@@ -1,5 +1,6 @@
 import { InfoOutlined, PlayArrow } from '@material-ui/icons'
 import React,{useState} from 'react';
+import { Link } from 'react-router-dom';
 import Modal from '../modal/Modal'
 
 function FeaturedImg(props) {
@@ -24,8 +25,10 @@ function FeaturedImg(props) {
           <span className="desc">{props.desc}</span>
           <div className="buttons">
               <button className="play">
-                  <PlayArrow/>
-                  <span>Play</span>
+                  <Link to={`/React-Netflix/watch/${props.movieId}`}>
+                    <PlayArrow/>
+                    <span>Play</span>
+                  </Link>
               </button>
               <button className="more" onClick={modalClose}>
                   <InfoOutlined/>
@@ -34,7 +37,7 @@ function FeaturedImg(props) {
           </div>
       </div>
       {modalOpen && 
-        <Modal movieId={props.movieId}/>
+        <Modal movieId={props.movieId} modalClose={modalClose}/>
       }
     </>
   )

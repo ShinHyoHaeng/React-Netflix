@@ -21,7 +21,7 @@ export default function ListItem(props) {
                 <span className="ranking">{props.idx+1}</span>
                 <img src={props.image} alt={props.title} />
             </div>       
-            <>{modalOpen && <Modal movieId={props.movieId}></Modal>}</>
+            <>{modalOpen && <Modal movieId={props.movieId} modalClose={modalClose}></Modal>}</>
         </>
     )
 }

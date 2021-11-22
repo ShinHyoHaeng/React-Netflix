@@ -5,17 +5,7 @@ import {API_URL, API_KEY, IMAGE_BASE_URL } from '../../database/Movie'
 import { Link } from 'react-router-dom';
 import './modal.scss'
 
-const Modal = (props) => {
-
-    const [modalOpen, setModalOpen] = useState(false)
-    const modalClose = () => {
-        setModalOpen(!modalOpen)
-        if(modalOpen){
-            document.body.style.overflow = "unset";
-        }else{
-            document.body.style.overflow = "hidden";
-        }
-    }
+const Modal = ({modalClose, movieId}) => {
 
     // modal 외부 영역 클릭 시 modal 닫힘
     const onCloseModal = (e) => {
@@ -26,11 +16,9 @@ const Modal = (props) => {
         }
     }
 
-    let movieId = props.movieId;
     const [Movie, setMovie] = useState([]);
 
     useEffect(() => {
-        // let endpointCrew = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
         let endpointInfo = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
 
         fetch(endpointInfo)
@@ -39,7 +27,7 @@ const Modal = (props) => {
             console.log(response);
             setMovie(response);
         })
-    })
+    },[])
 
     return createPortal(
         <div className="modal_container" onClick={onCloseModal}>
@@ -53,12 +41,11 @@ const Modal = (props) => {
                     }
                     <div className="itemText">
                         <h1>{Movie.original_title}</h1>
-                        <p className="desc">{Movie.overview}</p>
                     </div>
                 </div>
                 <div className="itemInfo">
                     <div className="icons">
-                        <Link to="/React-Netflix/watch" className="playBtn" onClick={modalClose}>
+                        <Link to={`/React-Netflix/watch/${movieId}`} className="playBtn" onClick={modalClose}>
                             <button><PlayArrow/></button>
                         </Link>  
                         <Add className="icon"/>
@@ -71,10 +58,11 @@ const Modal = (props) => {
                         <span>{Movie.release_date}</span>
                     </div>
                     <div className="genre">genre</div>
+                    <p className="desc">{Movie.overview}</p>
                 </div>
             </div>
         </div>,
-        document.getElementById("modal") 
+        document.getElementById("modal")
     )
     
 }

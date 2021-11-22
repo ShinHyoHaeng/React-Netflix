@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const YoutubeEmbed = ({ embedId }) => (
+const YoutubeEmbed = ({embedId, name}) => (
   <div className="video">
     <iframe
       width="100%"
@@ -10,7 +10,7 @@ const YoutubeEmbed = ({ embedId }) => (
       frameBorder="0"
       allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
-      title="Harry Potter and the Chamber of Secrets (2002) Official Trailer"
+      title={name}
     />
   </div>
 );

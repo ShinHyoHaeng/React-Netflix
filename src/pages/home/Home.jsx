@@ -14,10 +14,7 @@ const Home = () => {
             <Featured />
             
             {/* List 컴포넌트 연결 */}
-            <List title="Popular movies" /> 
-            {/* <List text="Top rated movies"/> 
-            <List text="Popular TV shows"/> 
-            <List text="Top rated TV shows"/>  */}
+            <List title="Popular movies"/> 
         </div>
     )
 }

@@ -65,6 +65,12 @@
                 font-weight: 500;
                 margin-right: 10px;
                 cursor: pointer;
+                a{
+                    color:unset;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
                 &.play{
                     background-color: #fff;
                     color:var(--main-color);
