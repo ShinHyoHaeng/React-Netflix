@@ -17,16 +17,25 @@ const Modal = ({modalClose, movieId}) => {
     }
 
     const [Movie, setMovie] = useState([]);
+    const [genres, setGenres] = useState([]);
 
     useEffect(() => {
         let endpointInfo = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
+        let endpointGenres = `${API_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`;
 
         fetch(endpointInfo)
         .then(response => response.json())
         .then(response => {
             console.log(response);
             setMovie(response);
-        })
+        });
+
+        fetch(endpointGenres)
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+            setGenres(response);
+        });
     },[])
 
     return createPortal(
@@ -57,7 +66,6 @@ const Modal = ({modalClose, movieId}) => {
                         <span className="limit"><Star className="icon"/> {Movie.vote_average}</span>
                         <span>{Movie.release_date}</span>
                     </div>
-                    <div className="genre">genre</div>
                     <p className="desc">{Movie.overview}</p>
                 </div>
             </div>
