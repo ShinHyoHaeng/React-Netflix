@@ -17,11 +17,11 @@ const Modal = ({modalClose, movieId}) => {
     }
 
     const [Movie, setMovie] = useState([]);
-    const [genres, setGenres] = useState([]);
+    const [casts, setCasts] = useState([]);
 
     useEffect(() => {
         let endpointInfo = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
-        let endpointGenres = `${API_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`;
+        let endpointCrews = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
 
         fetch(endpointInfo)
         .then(response => response.json())
@@ -30,13 +30,15 @@ const Modal = ({modalClose, movieId}) => {
             setMovie(response);
         });
 
-        fetch(endpointGenres)
+        fetch(endpointCrews)
         .then(response => response.json())
         .then(response => {
-            console.log(response);
-            setGenres(response);
+            setCasts(response.cast);
+            console.log(response.cast);
         });
     },[])
+
+    const casts_main = casts.slice(0,3);
 
     return createPortal(
         <div className="modal_container" onClick={onCloseModal}>
@@ -50,6 +52,14 @@ const Modal = ({modalClose, movieId}) => {
                     }
                     <div className="itemText">
                         <h1>{Movie.original_title}</h1>
+                        <p className="casts">
+                            {
+                                casts_main &&
+                                casts_main.map((cast, index)=>(
+                                    <span key={index}>{cast.name} </span>
+                                ))
+                            }
+                        </p>
                     </div>
                 </div>
                 <div className="itemInfo">
