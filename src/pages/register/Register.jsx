@@ -23,7 +23,7 @@ export default function Register({history}) {
     };
     const handleFinish = () => {
         setPassword(passwordRef.current.value);
-        history.push("/React-Netflix/home")
+        history.push("/React-Netflix-Test/home")
     };
     // handleFinish 키보드 이벤트
     const onKeyPressFinish = (e) => {
@@ -38,7 +38,7 @@ export default function Register({history}) {
                     <Link to="/React-Netflix">
                         <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="logo" />
                     </Link>
-                    <Link to="/React-Netflix/Login"><button className="loginButton">Sign In</button></Link>
+                    <Link to="/React-Netflix-Test/Login"><button className="loginButton">Sign In</button></Link>
                 </div>
             </div>
             <div className="container">

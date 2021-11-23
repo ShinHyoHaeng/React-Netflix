@@ -10,7 +10,7 @@ export default function Intro({history}) {
                     <Link to="/React-Netflix">
                         <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="logo" />
                     </Link>
-                    <Link to="/React-Netflix/Login"><button className="loginButton">Sign In</button></Link>
+                    <Link to="/React-Netflix-Test/Login"><button className="loginButton">Sign In</button></Link>
                 </div>
             </div>
             <div className="container">
@@ -18,10 +18,10 @@ export default function Intro({history}) {
                 <h2>Watch anywhere. Cancel anytime.</h2>
                 <p>Ready to watch? Enter your email to create or restart your membership. Or just look around.</p>
                 <div className="buttons">
-                    <Link to="/React-Netflix/register">
+                    <Link to="/React-Netflix-Test/register">
                         <button>Register</button>
                     </Link>
-                    <Link to="/React-Netflix/home">
+                    <Link to="/React-Netflix-Test/home">
                         <button>Ready to Watch</button>
                     </Link>
                 </div>

@@ -64,7 +64,7 @@ const Modal = ({modalClose, movieId}) => {
                 </div>
                 <div className="itemInfo">
                     <div className="icons">
-                        <Link to={`/React-Netflix/watch/${movieId}`} className="playBtn" onClick={modalClose}>
+                        <Link to={`/React-Netflix-Test/watch/${movieId}`} className="playBtn" onClick={modalClose}>
                             <button><PlayArrow/></button>
                         </Link>  
                         <Add className="icon"/>

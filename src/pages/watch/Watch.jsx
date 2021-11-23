@@ -24,7 +24,7 @@ export default function Watch(props) {
     return (
         <div className="watch">
             <div className="back">
-                <Link to="/React-Netflix/home">
+                <Link to="/React-Netflix-Test/home">
                     <ArrowBackOutlined/> 
                     Home
                 </Link>

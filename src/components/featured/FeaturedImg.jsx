@@ -25,7 +25,7 @@ function FeaturedImg(props) {
           <span className="desc">{props.desc}</span>
           <div className="buttons">
               <button className="play">
-                  <Link to={`/React-Netflix/watch/${props.movieId}`}>
+                  <Link to={`/React-Netflix-Test/watch/${props.movieId}`}>
                     <PlayArrow/>
                     <span>Play</span>
                   </Link>

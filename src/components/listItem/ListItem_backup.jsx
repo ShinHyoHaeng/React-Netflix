@@ -28,7 +28,7 @@ export default function ListItem({index}) {
                 >
                     <img src="https://material.asset.catchplay.com/WAR-TW-002-A0073/artworks/posters/WAR-TW-002-A0073-P704.jpg" alt="harry potter and the chamber of secrets" />
                     {isHovered && (
-                        <Link to="/React-Netflix/watch">
+                        <Link to="/React-Netflix-Test/watch">
                             {/* 삽입한 동영상 자동재생+반복 설정 */}
                             <YoutubeEmbed embedId="1bq0qff4iF8"/>        
                             <div className="itemInfo">
