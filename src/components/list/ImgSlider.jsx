@@ -88,6 +88,17 @@ export class ImgSlider extends Component {
                         infinite: false,
                         lazyload: true
                     }
+                },{
+                    breakpoint: 335,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        swipe:true,
+                        arrows:false,
+                        initialSlide:0,
+                        infinite: false,
+                        lazyload: true
+                    }
                 }
             ]
         }
