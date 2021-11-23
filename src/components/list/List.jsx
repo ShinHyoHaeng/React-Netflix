@@ -5,9 +5,7 @@ import ListItem from '../listItem/ListItem'
 import { withRouter } from 'react-router';
 import ImgSlider from './ImgSlider';
 
-
 function List(props) {
-    
     const [Movies, setMovies] = useState([]);
 
     useEffect(() => {
