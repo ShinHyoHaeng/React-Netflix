@@ -149,20 +149,33 @@
     }
 }
 
-
-
 @include mobile {
     .modal_container{
+        position:fixed;
+        bottom:unset;
+        height: 100%;
+        overflow: auto;
         .itemModal{
-            position:fixed;
+            position:relative;
             top:0;
             left: 0;
             width: 100vw;
-            height: 100vh;
+            height: auto;
             border-radius: 0;
             transform:unset;
             .video{
-                height: 30vh;
+                height: 30vh;   
+            }
+            .itemImg{
+                .casts{
+                    font-size: #{$font-default};
+                    width: 100%;
+                    display: block;
+                    span{
+                        display: inline-block;
+                        line-height: 1.5em;
+                    }
+                }
             }
         }
     }

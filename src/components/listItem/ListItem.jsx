@@ -8,9 +8,9 @@ export default function ListItem(props) {
     const modalClose = () => {
         setModalOpen(!modalOpen)
         if(modalOpen){
-            document.body.style.overflow = "unset";
+            document.getElementById("root").style.overflow = "unset";
         }else{
-            document.body.style.overflow = "hidden";
+            document.getElementById("root").style.overflow = "hidden";
         }
     }
 
