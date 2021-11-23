@@ -30,7 +30,11 @@ function List(props) {
     return (
         <div className="list">
             <span className="listTitle">{props.title}</span>
-            <ImgSlider>{listItems}</ImgSlider>
+            {
+                listItems.length > 0 ?
+                <ImgSlider>{listItems}</ImgSlider>
+                : null
+            }  
         </div>
     )
 }
