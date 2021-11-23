@@ -167,6 +167,9 @@
                 height: 30vh;   
             }
             .itemImg{
+                img{
+                    height:300px;
+                }
                 .casts{
                     font-size: #{$font-default};
                     width: 100%;
